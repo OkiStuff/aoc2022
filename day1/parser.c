@@ -50,8 +50,6 @@ parser parse_data(const char* filepath)
   
     for (cursor = 0; cursor < filesize; cursor++)
     {
-        //printf("%c", buffer[cursor]);
-    
         if (buffer[cursor] == 0) break;
         else if (buffer[cursor] == '\n' || buffer[cursor] == '\r')
         {
@@ -78,19 +76,13 @@ parser parse_data(const char* filepath)
             }
             parser_data.data[parser_data.size - 1] += atoi(numdata);
             numdata[4] = 0;
-            
-            perror("Message");
-            printf("numdata has been cleared: %s\nParser Data %d is equal to %d\n", numdata, parser_data.size - 1, parser_data.data[parser_data.size - 1]);
-      
+                              
             continue;
         }
     
         else increment_last_line = 0;
         numdata[numdata_index] = buffer[cursor];
-        
-        printf("Set numdata[%d] to %c\n", numdata_index, numdata[numdata_index]);
-        printf("numdata is now: %s\n", numdata);
-        
+               
         numdata_index++;
     }
 
