@@ -15,6 +15,8 @@ int main(void)
         else if (parser_data.data[i] >= third) third = parser_data.data[i];
     }
     
+    // For some reason I have to sort two times???? Idk but it only works if it is sorted multiple times
+    // TODO: find a better way of doing this. still fast tho
     for (int i = 0; i < parser_data.size; i++)
     {
         if (parser_data.data[i] >= highest) highest = parser_data.data[i];
